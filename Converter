@@ -1,0 +1,10 @@
+def from_roman_numeral(str_roman):
+  roman_dict = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+
+  numbers = [roman_dict[x] for x in str_roman]
+
+  for i in range(0,len(numbers)-1):
+    if numbers[i] < numbers[i+1]:
+      numbers[i] *= -1
+
+  return sum(numbers)
